@@ -1,0 +1,13 @@
+<%= link_to "Back to the list", escorts_path%>
+
+
+<ul>
+  <h2><strong> Pseudo: </strong><%= @escort.pseudo %></h2>
+  <li><strong> City: </strong><%= @escort.city %></li>
+  <li><strong> Services: </strong><%= @escort.service %></li>
+  <li><strong> Available: </strong><%= @escort.status %></li>
+  <li><strong> Gender: </strong><%= @escort.gender%></li>
+  <li><strong> Contact: </strong><%= @escort.contact %></li>
+  <li><strong> Age: </strong><%= @escort.age %> years old</li>
+  <li><strong> Price: </strong><%= @escort.price %> €</li>
+</ul>
