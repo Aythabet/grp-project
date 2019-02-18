@@ -1,0 +1,11 @@
+<h1> List of Escorts</h1>
+
+
+<ul>
+  <%@escorts.each do |escort|%>
+    <h3><%= link_to escort.pseudo, escort_path(escort)%></h3>
+    <li><%= escort.city %></li>
+    <li><%= escort.age %></li>
+    <br>
+  <% end %>
+</ul>
