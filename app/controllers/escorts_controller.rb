@@ -1,0 +1,2 @@
+class EscortsController < ApplicationController
+end
