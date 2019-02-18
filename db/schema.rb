@@ -10,9 +10,50 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2019_02_18_112940) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "escorts", force: :cascade do |t|
+    t.string "pseudo"
+    t.string "city"
+    t.integer "price"
+    t.text "service"
+    t.boolean "status"
+    t.string "gender"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "reservations", force: :cascade do |t|
+    t.date "date"
+    t.boolean "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "escort_id"
+    t.bigint "user_id"
+    t.index ["escort_id"], name: "index_reservations_on_escort_id"
+    t.index ["user_id"], name: "index_reservations_on_user_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer "rating"
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "reservation_id"
+    t.index ["reservation_id"], name: "index_reviews_on_reservation_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email"
+    t.string "pseudo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "reservations", "escorts"
+  add_foreign_key "reservations", "users"
+  add_foreign_key "reviews", "reservations"
 end
