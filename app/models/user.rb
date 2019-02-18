@@ -5,4 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :reservations
   has_many :reviews, through: :reservation
+  validates :email, uniqueness: true
+  validates :pseudo, uniqueness: true
+  validates :age, inclusion: { in: 18..120 }
 end
