@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>TODO</title>
+    <title>Seeking company... Click here!</title>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
@@ -19,7 +19,7 @@
     <p class="alert"><%= alert %></p>
 
 
-    <h2>logged in:<%= user_signed_in? %></h2>
+    <h5>logged in: <%= user_signed_in? %></h5>
 
     <%= yield %>
     <%= javascript_include_tag 'application' %>
