@@ -9,11 +9,11 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.new(reservation_params)
     # we need `escort_id` to asssociate reservation with corresponding escort
     @reservation.escort = @escort
-    reservation.user = current_user
+    @reservation.user = current_user
     if @reservation.save
-    redirect_to escort_path(@escort)
+      redirect_to escort_path(@escort)
     else
-    render :new:
+      render :new
     end
   end
 
@@ -24,6 +24,6 @@ class ReservationsController < ApplicationController
   end
 
   def reservation_params
-    params.require(:date, :message).permit(:date, :message)
+    params.require(:reservation).permit(:date, :message)
   end
 end
