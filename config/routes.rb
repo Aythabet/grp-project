@@ -13,7 +13,9 @@ Rails.application.routes.draw do
 
     resources :reviews, only: [:new, :create]
   end
+  post '/profile/', to: 'users#update', as: :user
 end
+
 
 
 
