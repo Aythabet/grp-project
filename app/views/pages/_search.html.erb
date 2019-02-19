@@ -1,0 +1,9 @@
+<div class="search-bar">
+  <%= form_tag escorts_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "🔍 Filter an Escort (by: name, city, gender)"
+    %>
+  <% end %>
+</div>

@@ -2,26 +2,26 @@
 <div class="navbar-wagon">
   <!-- Logo -->
   <a href="/escorts" class="navbar-wagon-brand">
-    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" alt="logo">
+    <img src="http://lh3.ggpht.com/LhVxarUtRhNKMSGx2KMiPAGgzk9E3YqOjRUptgIfGoI7gHZl-M4Kszo_Ro02KJ_HnUU=w300" alt="logo">
   </a>
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
     <a href="/escorts" class="navbar-wagon-item navbar-wagon-link">Browse escorts</a>
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Bookings</a>
+    <a href="/reservations" class="navbar-wagon-item navbar-wagon-link">Bookings</a>
     <a href="/profile" class="navbar-wagon-item navbar-wagon-link">Profile</a>
 
     <!-- Profile picture with dropdown list -->
     <div class="navbar-wagon-item">
       <div class="dropdown">
-        <img src="<%= current_user.picture %>" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
-        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-          <li><a href="/escorts">Browse escorts</a></li>
-          <li><a href="#">Bookings</a></li>
-          <li><a href="/profile">Profile</a></li>
-          <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
-        </ul>
+         <img src="<%= current_user.picture %>" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
+          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+            <li><a href="/escorts">Browse escorts</a></li>
+            <li><a href="/reservations">Bookings</a></li>
+            <li><a href="/profile">Profile</a></li>
+            <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
+          </ul>
       </div>
     </div>
   </div>
