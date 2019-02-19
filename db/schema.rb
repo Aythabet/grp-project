@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2019_02_19_135834) do
+=======
+
+ActiveRecord::Schema.define(version: 2019_02_19_135834) do
+
+>>>>>>> 3e2fde1efc4910f9f886a462a34fb9944a1f28d6
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +32,7 @@ ActiveRecord::Schema.define(version: 2019_02_19_135834) do
     t.datetime "updated_at", null: false
     t.integer "age"
     t.string "contact"
+    t.string "photos"
   end
 
   create_table "reservations", force: :cascade do |t|
@@ -35,6 +42,7 @@ ActiveRecord::Schema.define(version: 2019_02_19_135834) do
     t.datetime "updated_at", null: false
     t.bigint "escort_id"
     t.bigint "user_id"
+    t.string "message"
     t.index ["escort_id"], name: "index_reservations_on_escort_id"
     t.index ["user_id"], name: "index_reservations_on_user_id"
   end

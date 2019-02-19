@@ -1,0 +1,21 @@
+<h2>Create reservation</h2>
+
+<%= render "escorts/show", escort: @escort %>
+
+<%= simple_form_for [@escort ,@reservation] do |f| %>
+  <div class="form-inputs">
+    <%= f.input :date,
+                required: true,
+                autofocus: true,
+                input_html: {} %>
+    <%= f.input :message,
+                as: :text,
+                required: false,
+                input_html: { autocomplete: "current-password" } %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Reserve!" %>
+  </div>
+<% end %>
+
