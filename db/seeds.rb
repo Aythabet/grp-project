@@ -11,8 +11,8 @@ Escort.destroy_all
   status: ["Available", "Not Available"].sample,
   gender: Faker::Gender.binary_type,
   age: Faker::Number.within(18..69),
-  contact: Faker::Internet.email
-  )
+  contact: Faker::Internet.email,
+  photos: Faker::Avatar.image("my-own-slug", "50x50", "bmp") )
   escort.save!
 end
 
