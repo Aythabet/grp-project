@@ -1,0 +1,6 @@
+<ul>
+  <% @reservations.each do |reservation| %>
+    <%= link_to reservation.id, reservation_path(reservation)%>
+    <br>
+  <%end %>
+</ul>

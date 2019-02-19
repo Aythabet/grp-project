@@ -17,6 +17,15 @@ class ReservationsController < ApplicationController
     end
   end
 
+  def index
+    @reservations = Reservation.all
+  end
+
+  def show
+    @reservations = Reservation.all
+    @reservation = Reservation.find(params[:id])
+  end
+
   private
 
   def set_escort
