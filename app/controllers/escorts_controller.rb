@@ -3,7 +3,8 @@ class EscortsController < ApplicationController
     if params[:query].present?
       sql_query = " \
         pseudo ILIKE :query\
-        OR city ILIKE :query" # => by city in field
+        OR city ILIKE :query\
+        OR gender ILIKE :query" # => by city in field
       @escorts = Escort.where(sql_query, query: "%#{params[:query]}%")
     else
       @escorts = Escort.all
