@@ -1,8 +1,6 @@
-<%= link_to "Back to the list", escorts_path%>
 
-<div><%= cl_image_tag @escort.photo, height: 300, width: 400, crop: :fill %></div>
 <ul>
-  <h2><strong> Pseudo: </strong><%= @escort.pseudo %></h2>
+  <h3><strong> Pseudo: </strong><%= @escort.pseudo %></h3>
   <li><strong> City: </strong><%= @escort.city %></li>
   <li>
     <strong> Services: </strong><ul><% @escort.service.tr('[]', '').tr('"', '').split(',').each do |element| %>
@@ -15,5 +13,4 @@
   <li><strong> Price: </strong><%= @escort.price %> €</li>
 </ul>
 
-
-<%= link_to "Make a reservation", new_escort_reservation_path(@escort) %>
+<%= link_to "Back to the details", escort_path(@escort) %>
