@@ -1,16 +1,25 @@
 class ReservationsController < ApplicationController
-  def index
-    @escorts = Escort.all
+  before_action :set_escort, only: [:new, :create]
+
+  def new
+    @reservation = Reservation.new
   end
 
-  def show
-    @escort = Escort.find(params[:id])
+  def create
+    @reservation = Reservation.new(reservation_params)
+    # we need `escort_id` to asssociate reservation with corresponding escort
+    @reservation.escort = @escort
+    reservation.user = current_user
+    @reservation.save
   end
 
   private
 
   def set_escort
-    @escort = Escort.find(params[:id])
+    @escort = Escort.find(params[:escort_id])
   end
 
+  def reservation_params
+    params.require(:date, :message).permit(:date, :message)
+  end
 end
