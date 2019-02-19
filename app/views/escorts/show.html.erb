@@ -1,6 +1,6 @@
 <%= link_to "Back to the list", escorts_path%>
 
-
+<div><%= cl_image_tag @escort.photo, height: 300, width: 400, crop: :fill %></div>
 <ul>
   <h2><strong> Pseudo: </strong><%= @escort.pseudo %></h2>
   <li><strong> City: </strong><%= @escort.city %></li>
