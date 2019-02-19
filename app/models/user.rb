@@ -8,4 +8,6 @@ class User < ApplicationRecord
   validates :email, uniqueness: true
   validates :pseudo, uniqueness: true
   validates :age, inclusion: { in: 18..120 }
+
+  mount_uploader :picture, PhotoUploader
 end
