@@ -61,7 +61,6 @@ GEM
       activemodel (>= 4.0.0)
       activesupport (>= 4.0.0)
       mime-types (>= 1.16)
->>>>>>> 3e2fde1efc4910f9f886a462a34fb9944a1f28d6
     cloudinary (1.9.1)
       aws_cf_signer
       rest-client
@@ -231,7 +230,6 @@ DEPENDENCIES
 <<<<<<< HEAD
 =======
   carrierwave (~> 1.2)
->>>>>>> 3e2fde1efc4910f9f886a462a34fb9944a1f28d6
   cloudinary (~> 1.9.1)
   devise
   dotenv-rails
