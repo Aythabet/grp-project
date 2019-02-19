@@ -1,2 +1,8 @@
 <h6>🔎🔎🔎This is the search bar 🔍🔍🔍</h6>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque autem sapiente nobis nam accusantium, sed perferendis illum sint accusamus vel dolorem! Fuga nihil accusamus sed, quis? Deleniti, aut sequi sint.</p>
+<%= form_tag escorts_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find an Escort"
+  %>
+<% end %>

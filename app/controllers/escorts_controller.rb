@@ -1,6 +1,10 @@
 class EscortsController < ApplicationController
   def index
-    @escorts = Escort.all
+    if params[:query].present?
+      @escorts = Escort.where(pseudo: params[:query])
+    else
+      @escorts = Escort.all
+    end
   end
 
   def show
