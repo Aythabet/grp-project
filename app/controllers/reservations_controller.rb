@@ -10,7 +10,11 @@ class ReservationsController < ApplicationController
     # we need `escort_id` to asssociate reservation with corresponding escort
     @reservation.escort = @escort
     reservation.user = current_user
-    @reservation.save
+    if @reservation.save
+    redirect_to escort_path(@escort)
+    else
+    render :new:
+    end
   end
 
   private
