@@ -13,7 +13,7 @@ class ReservationsController < ApplicationController
     if @reservation.save
     redirect_to escort_path(@escort)
     else
-    render :new:
+    render :new
     end
   end
 
