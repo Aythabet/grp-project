@@ -4,7 +4,10 @@
 <ul>
   <h2><strong> Pseudo: </strong><%= @escort.pseudo %></h2>
   <li><strong> City: </strong><%= @escort.city %></li>
-  <li><strong> Services: </strong><%= @escort.service %></li>
+  <li>
+    <strong> Services: </strong><ul><% @escort.service.tr('[]', '').tr('"', '').split(',').each do |element| %>
+      <li><%= element %></li>
+      <% end %></ul>
   <li><strong> Status: </strong><%= @escort.status %></li>
   <li><strong> Gender: </strong><%= @escort.gender%></li>
   <li><strong> Contact: </strong><%= @escort.contact %></li>
