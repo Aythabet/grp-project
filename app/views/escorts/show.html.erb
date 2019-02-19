@@ -1,8 +1,12 @@
 <%= link_to "Back to the list", escorts_path%>
 <br>
 <br>
-<img src=<%= @escort.photos %> width="200px">
-
+<div>
+<div style="display: inline"><img src=<%= @escort.photos %> width="200px"></div>
+<div style="display: inline"><img src=<%= @escort.photos %> width="200px"></div>
+<div style="display: inline"><img src=<%= @escort.photos %> width="200px"></div>
+<div style="display: inline"><img src=<%= @escort.photos %> width="200px"></div>
+</div>
 <ul>
   <h2><strong> Pseudo: </strong><%= @escort.pseudo %></h2>
   <li><strong> City: </strong><%= @escort.city %></li>

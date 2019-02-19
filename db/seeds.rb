@@ -4,6 +4,7 @@ Escort.destroy_all
 Reservation.destroy_all
 
 user = User.create
+images = ["../app/assets/images/1.jpg"]
 
 10.times do
   escort = Escort.new(
@@ -13,9 +14,8 @@ user = User.create
     service: [Faker::Superhero.power, Faker::Games::Pokemon.name , Faker::ElectricalComponents.passive],
     status: ["Available", "Not Available"].sample,
     gender: Faker::Gender.binary_type,
-    age: Faker::Number.within(18..69),
     contact: Faker::Internet.email,
-    photos: "https://thispersondoesnotexist.com/"
+    photos: images.sample
   )
   escort.save!
 
