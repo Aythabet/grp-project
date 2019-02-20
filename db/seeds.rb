@@ -3,7 +3,7 @@ puts "Generating Escorts"
 Escort.destroy_all
 Reservation.destroy_all
 
-# user = User.create
+user = User.create
 # images = ["../app/assets/images/1.jpg"]
 
 5.times do
@@ -15,7 +15,7 @@ Reservation.destroy_all
     status: ["Available", "Not Available"].sample,
     gender: Faker::Gender.binary_type,
     contact: Faker::Internet.email,
-    photos: images.sample
+    photos: "Pictures"
   )
   escort.save!
 
