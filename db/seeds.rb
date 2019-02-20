@@ -5,8 +5,14 @@ Escort.destroy_all
 
 
 user = User.create
-# images = ["../app/assets/images/1.jpg"]
-i = 1
+escorts_images = [
+  'https://res.cloudinary.com/daeahsosj/image/upload/v1550672218/samples/escorts/escort1.jpg',
+  'https://res.cloudinary.com/daeahsosj/image/upload/v1550672231/samples/escorts/escort2.png',
+  'https://res.cloudinary.com/daeahsosj/image/upload/v1550672219/samples/escorts/escort3.jpg',
+  'https://res.cloudinary.com/daeahsosj/image/upload/v1550672219/samples/escorts/escort4.jpg',
+  'https://res.cloudinary.com/daeahsosj/image/upload/v1550672237/samples/escorts/escort5.jpg'
+]
+i = 0
 
 5.times do
   escort = Escort.new(
@@ -17,7 +23,7 @@ i = 1
     status: ["Available", "Not Available"].sample,
     gender: Faker::Gender.binary_type,
     contact: Faker::Internet.email,
-    photos: "https://res.cloudinary.com/daeahsosj/image/upload/v1550670630/escort#{i}.jpg"
+    photos: escorts_images[i]
   )
   escort.save!
 
