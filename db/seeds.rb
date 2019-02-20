@@ -6,6 +6,11 @@ Escort.destroy_all
 
 user = User.create
 # images = ["../app/assets/images/1.jpg"]
+escorts_images = [
+
+]
+
+i = 1
 
 5.times do
   escort = Escort.new(
@@ -16,7 +21,7 @@ user = User.create
     status: ["Available", "Not Available"].sample,
     gender: Faker::Gender.binary_type,
     contact: Faker::Internet.email,
-    photos: "Pictures"
+    photos: "https://res.cloudinary.com/daeahsosj/image/upload/v1550670630/escort#{i}.jpg"
   )
   escort.save!
 
@@ -28,6 +33,7 @@ user = User.create
     user: user
   )
   reservation.save!
+  i += 1
 end
 
 puts "Escorts generated"
