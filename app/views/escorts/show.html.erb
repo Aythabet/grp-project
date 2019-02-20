@@ -24,5 +24,11 @@
 
 <%= link_to "Make a reservation", new_escort_reservation_path(@escort) %>
 
-<!-- <p><strong>All reviews for <%= @escort.pseudo.capitalize %></strong></p>
- -->
+<p><strong>Previous reviews for <%= @escort.pseudo.capitalize %></strong></p>
+<ol>
+  <% @escort.reviews.each do |review| %>
+    <li>Rating: <%= review.rating %> & Comments: <%= review.content %></li>
+    <br>
+    <%end %>
+</ol>
+
