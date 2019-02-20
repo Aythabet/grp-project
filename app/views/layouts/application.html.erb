@@ -15,9 +15,12 @@
   <body>
 
     <%= render "pages/navbar" %>
-    <div class="notice alert-info"><%= notice %></div>
-    <div class="alert alert-warning"><%= alert %></div>
-
+    <% if notice.nil? == false %>
+      <div class="alert notice alert-info"><%= notice %></div>
+    <% end %>
+    <% if alert.nil? == false%>
+      <div class="alert alert-warning"><%= alert %></div>
+    <% end %>
     <div class="container">
     <%= render "pages/search" %>
       <%= yield %>
