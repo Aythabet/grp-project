@@ -25,10 +25,14 @@
 <%= link_to "Make a reservation", new_escort_reservation_path(@escort) %>
 
 <p><strong>Previous reviews for <%= @escort.pseudo.capitalize %></strong></p>
-<ol>
+  <% if @escort.reviews.blank? %>
+    <li> No existing reviews, be the first one and book an appointment! </li>
+  <% else %>
+  <ol>
   <% @escort.reviews.each do |review| %>
     <li>Rating: <%= review.rating %> & Comments: <%= review.content %></li>
     <br>
-    <%end %>
-</ol>
+    <% end %>
+  <% end%>
+  </ol>
 
