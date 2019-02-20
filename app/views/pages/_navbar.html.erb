@@ -1,44 +1,61 @@
 <!-- nav bar -->
 <div class="navbar-wagon">
-  <!-- Logo -->
-  <a href="/escorts" class="navbar-wagon-brand">
-    <img src="http://lh3.ggpht.com/LhVxarUtRhNKMSGx2KMiPAGgzk9E3YqOjRUptgIfGoI7gHZl-M4Kszo_Ro02KJ_HnUU=w300" alt="logo">
-  </a>
-
-  <!-- Right Navigation -->
-  <div class="navbar-wagon-right hidden-xs hidden-sm">
-
-    <a href="/escorts" class="navbar-wagon-item navbar-wagon-link">Browse escorts</a>
-    <a href="/reservations" class="navbar-wagon-item navbar-wagon-link">Bookings</a>
-    <a href="/profile" class="navbar-wagon-item navbar-wagon-link">Profile</a>
-
+    <!-- Logo -->
+    <a href="/escorts" class="navbar-wagon-brand">
+        <img src="http://lh3.ggpht.com/LhVxarUtRhNKMSGx2KMiPAGgzk9E3YqOjRUptgIfGoI7gHZl-M4Kszo_Ro02KJ_HnUU=w300" alt="logo">
+    </a>
+    <!-- Right Navigation -->
     <% if current_user %>
-      <!-- Profile picture with dropdown list -->
-      <div class="navbar-wagon-item">
+    <div class="navbar-wagon-right hidden-xs hidden-sm">
+        <a href="/escorts" class="navbar-wagon-item navbar-wagon-link">Browse escorts</a>
+        <a href="/reservations" class="navbar-wagon-item navbar-wagon-link">Bookings</a>
+        <a href="/profile" class="navbar-wagon-item navbar-wagon-link">Profile</a>
+        <!-- Profile picture with dropdown list -->
+        <div class="navbar-wagon-item">
+            <div class="dropdown">
+                <img src="<%= current_user.picture %>" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
+                <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+                    <li><a href="/escorts">Browse escorts</a></li>
+                    <li><a href="/reservations">Bookings</a></li>
+                    <li><a href="/profile">Profile</a></li>
+                    <li>
+                        <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- <li><a href="/users/sign_out">Log Out</a></li> -->
+    <!-- Dropdown appearing on mobile only -->
+    <div class="navbar-wagon-item hidden-md hidden-lg">
         <div class="dropdown">
-           <img src="<%= current_user.picture %>" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
+            <i class="fas fa-bars dropdown-toggle" data-toggle="dropdown" role="button"></i>
             <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-              <li><a href="/escorts">Browse escorts</a></li>
-              <li><a href="/reservations">Bookings</a></li>
-              <li><a href="/profile">Profile</a></li>
-              <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
+                <li><a href="/escorts">Browse escorts</a></li>
+                <li><a href="#">Bookings</a></li>
+                <li><a href="/profile">Profile</a></li>
+                <li>
+                    <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
+                </li>
             </ul>
         </div>
-      </div>
-    <% end %>
-  </div>
-           <!-- <li><a href="/users/sign_out">Log Out</a></li> -->
-
-  <!-- Dropdown appearing on mobile only -->
-  <div class="navbar-wagon-item hidden-md hidden-lg">
-    <div class="dropdown">
-      <i class="fas fa-bars dropdown-toggle" data-toggle="dropdown" role="button"></i>
-      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><a href="/escorts">Browse escorts</a></li>
-        <li><a href="#">Bookings</a></li>
-        <li><a href="/profile">Profile</a></li>
-        <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
-      </ul>
     </div>
-  </div>
+        <!-- Case user not signed in -->
+    <% else %>
+    <div class="navbar-wagon-right hidden-xs hidden-sm">
+        <!-- Profile picture with dropdown list -->
+        <div class="navbar-wagon-item">
+            <div class="dropdown">
+                <img src="https://bit.ly/2TYLYiS" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
+              </div>
+        </div>
+    </div>
+    <!-- <li><a href="/users/sign_out">Log Out</a></li> -->
+    <!-- Dropdown appearing on mobile only -->
+    <div class="navbar-wagon-item hidden-md hidden-lg">
+        <div class="dropdown">
+            <i class="fas fa-bars dropdown-toggle" data-toggle="dropdown" role="button"></i>
+        </div>
+    </div>
+    <% end %>
 </div>
