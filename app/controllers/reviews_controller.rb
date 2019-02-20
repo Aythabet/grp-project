@@ -9,7 +9,7 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @review.reservation = @reservation
     @review.save!
-    redirect_to escort_path(@reservation.escort)
+    redirect_to reservation_path(@reservation)
   end
 
   private
