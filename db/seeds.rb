@@ -1,12 +1,13 @@
 require 'faker'
 puts "Generating Escorts"
-Escort.destroy_all
 Reservation.destroy_all
+Escort.destroy_all
+
 
 user = User.create
-images = ["../app/assets/images/1.jpg"]
+# images = ["../app/assets/images/1.jpg"]
 
-10.times do
+5.times do
   escort = Escort.new(
     pseudo: Faker::Internet.username,
     city: Faker::Address.city,
@@ -15,14 +16,14 @@ images = ["../app/assets/images/1.jpg"]
     status: ["Available", "Not Available"].sample,
     gender: Faker::Gender.binary_type,
     contact: Faker::Internet.email,
-    photos: images.sample
+    photos: "Pictures"
   )
   escort.save!
 
   reservation = Reservation.new(
     date: ["2019-03-17", "2019-05-31", "2019-05-13", "2019-03-08"].sample,
     status: ["Confirmed", "Pending", "Done"].sample,
-    message: ["Looking forward to see some hot stuff", "No comment", "Feeling EXCITED", "Ouuh Uhhh"].sample,
+    message: ["Looking forward to see some fine stuff", "No comment", "Feeling EXCITED", "Ouuh Uhhh"].sample,
     escort: escort,
     user: user
   )

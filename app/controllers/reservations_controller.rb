@@ -11,7 +11,7 @@ class ReservationsController < ApplicationController
     @reservation.escort = @escort
     @reservation.user = current_user
     if @reservation.save
-      redirect_to escort_path(@escort)
+      redirect_to reservation_path(@reservation)
     else
       render :new
     end
