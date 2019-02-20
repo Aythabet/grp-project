@@ -6,10 +6,6 @@ Escort.destroy_all
 
 user = User.create
 # images = ["../app/assets/images/1.jpg"]
-escorts_images = [
-
-]
-
 i = 1
 
 5.times do
