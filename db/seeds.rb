@@ -1,7 +1,8 @@
 require 'faker'
 puts "Generating Escorts"
-Escort.destroy_all
 Reservation.destroy_all
+Escort.destroy_all
+
 
 user = User.create
 # images = ["../app/assets/images/1.jpg"]
