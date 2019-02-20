@@ -1,5 +1,10 @@
 
-
+<ul>
+   <li> Reservation ID: <%= @reservation.id %></li>
+   <li> Reservation date: <%= @reservation.date %></li>
+   <li> Reservation status: <%= @reservation.status %></li>
+   <li> Escort pseudo: <%= @reservation.escort.pseudo %></li>
+</ul>
 <%= simple_form_for ([@reservation, @review]) do |f| %>
   <%= f.input :content %>
   <%= f.input :rating %>
