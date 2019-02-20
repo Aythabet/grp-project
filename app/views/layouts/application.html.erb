@@ -15,13 +15,13 @@
   <body>
 
     <%= render "pages/navbar" %>
+    <div class="notice alert-info"><%= notice %></div>
+    <div class="alert alert-warning"><%= alert %></div>
+
+    <div class="container">
     <%= render "pages/search" %>
-
-
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-
-    <%= yield %>
+      <%= yield %>
+    </div>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
   </body>
