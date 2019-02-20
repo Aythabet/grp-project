@@ -15,7 +15,9 @@
   <body>
 
     <%= render "pages/navbar" %>
-    <%= render "pages/search" %>
+    <% if current_user %>
+      <%= render "pages/search" %>
+    <% end %>
 
 
     <p class="notice"><%= notice %></p>
