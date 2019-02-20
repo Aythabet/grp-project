@@ -1,30 +1,19 @@
 <h1> List of Escorts</h1>
 
-<ul>
-  <%@escorts.each do |escort|%>
-    <h3><%= link_to escort.pseudo, escort_path(escort)%></h3>
-    <li><%= escort.city %></li>
-    <li><%= escort.age %></li>
-    <br>
-  <% end %>
-</ul>
-
-
-<p>_______________________________________</p>
-
 <% @escorts.each do |escort| %>
-  <div class="card-escort">
-    <%= link_to escort_path(escort) do %>
-      <img src=<%= escort.photos %>>
-    </div>
+  <div class="col-xs-12 col-sm-6 col-md-4">
+    <div class="card-escort">
+      <%= link_to escort_path(escort) do %>
+        <img src=<%= escort.photos %>>
+      <% end %>
       <div class="card-escort-infos">
         <div>
-          <h2><%= escort.pseudo %></h2>
+          <h2><%= escort.pseudo.capitalize %></h2>
           <p><%= escort.city %> | <%= escort.gender %></p>
         </div>
         <h2 class="card-escort-pricing"><%= escort.price %> €</h2>
       </div>
-    <% end %>
+    </div>
+  </div>
 <% end %>
-
 
