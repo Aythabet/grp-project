@@ -1,6 +1,9 @@
 <ul>
   <% @reservations.each do |reservation| %>
-    <%= link_to reservation.id, reservation_path(reservation)%>
+    <%= link_to reservation.id, reservation_path(reservation)%> ---
+    <% if reservation.review.blank?  %>
+    <%= link_to "Add review", new_reservation_review_path(reservation)%>
+    <%end %>
     <br>
   <%end %>
 </ul>
