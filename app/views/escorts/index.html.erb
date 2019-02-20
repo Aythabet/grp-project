@@ -8,3 +8,23 @@
     <br>
   <% end %>
 </ul>
+
+
+<p>_______________________________________</p>
+
+<% @escorts.each do |escort| %>
+  <div class="card-escort">
+    <%= link_to escort_path(escort) do %>
+      <img src=<%= escort.photos %>>
+    </div>
+      <div class="card-escort-infos">
+        <div>
+          <h2><%= escort.pseudo %></h2>
+          <p><%= escort.city %> | <%= escort.gender %></p>
+        </div>
+        <h2 class="card-escort-pricing"><%= escort.price %> €</h2>
+      </div>
+    <% end %>
+<% end %>
+
+
