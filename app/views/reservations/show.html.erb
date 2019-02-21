@@ -1,15 +1,4 @@
 <%= render "reservations/reservations", reservation: @reservation %>
 
-<ul>
-<li><strong>Escort Reserved:</strong>   <%= @reservation.escort.pseudo %></li>
-<li><strong>Last message:</strong>   <%= @reservation.message %></li>
-<li><strong>Date de Reservation:</strong>   <%= @reservation.date %></li>
-<% if @reservation.review.blank? %>
-  <li>No reviews</li>
-  <% else %>
-<li><strong>Review:</strong> <%= @reservation.review.content %></li>
-<li><strong>Review rating:</strong> <%= @reservation.review.rating %></li>
-<% end %>
-</ul>
 
 
