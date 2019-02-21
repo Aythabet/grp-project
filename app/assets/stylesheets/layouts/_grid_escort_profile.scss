@@ -1,0 +1,27 @@
+.escort-grid {
+    display: grid;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    grid-template-columns: 23.6% 76.3%;
+    grid-template-rows: 47.8% 51.6%;
+    grid-gap: 3px;
+}
+
+.escort-pics-profile{
+    padding: 10px;
+    grid-row: 1 / span 1;
+    grid-column: 1 / span 1;
+}
+
+.escort-profile-card{
+    padding: 10px;
+    grid-row: 1 / span 1;
+    grid-column: 1 / span 2;
+
+}
+
+.escort-profile-bottom-card{
+    padding: 10px;
+    grid-row: 2 / span 1;
+    grid-column: 1 / span 2;
+}

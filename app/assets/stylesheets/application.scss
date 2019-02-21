@@ -9,13 +9,22 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
-// Your CSS partials
+// Your CSS partials: layouts
 @import "layouts/index";
-@import "components/index";
+@import "layouts/grid_escort_profile";
+@import "layouts/grid_escort_profile";
+
+// Your CSS partials: pages
 @import "pages/index";
-@import "components/card";
-@import "user/edit";
-@import "components/notification";
 @import "pages/sign-up";
+@import "pages/escort_profile";
+@import "user/edit";
+@import "pages/sign-up";
+
+// Your CSS partials: components
+@import "components/index";
+@import "components/card";
+@import "components/notification";
 @import "components/footer";
+
 
