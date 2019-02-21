@@ -11,7 +11,10 @@
 .notification .notification-content {
   flex-grow: 1;
   padding: 0 24px;
+}
 
+.notification-content {
+  font-size: 14px;
 }
 
 .notification p {
@@ -44,6 +47,10 @@
   color: #555555;
 }
 
+#text-res {
+  font-size: 14px;
+}
+
 .avatar-large {
   height: 50px;
   width: 50px;
@@ -53,20 +60,37 @@
 
 .review-btn {
   align: right;
-}
-
-
-.pull-right-booking {
-  padding-top: 12px;
-
+  height: 50px;
 }
 
 .notification:hover {
   border: solid green 1px;
 }
 
+.btn-res {
+  flex: 0 0 auto;
+  height: 40px;
+  margin: auto;
+  align-self: flex-end;
+}
 
+//Badges
 
+.pending{
+  margin-bottom: 5px;
+  font-size: 10px;
+  background-color: rgb(144, 144, 0);
+}
 
+.confirmed{
+  margin-bottom: 5px;
+  font-size: 10px;
+  background-color: rgb(187, 0, 204);
+}
 
+.done{
+  margin-bottom: 5px;
+  font-size: 10px;
+  background-color: green;
+}
 
