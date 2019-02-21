@@ -22,11 +22,8 @@
     <% if alert.nil? == false%>
       <div class="alert alert-warning"><%= alert %></div>
     <% end %>
-    <% if current_user %>
       <div class="container">
-
-    <% end %>
-      <%= yield %>
+        <%= yield %>
       </div>
 
 
