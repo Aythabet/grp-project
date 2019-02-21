@@ -20,14 +20,19 @@
     <% else %>
     <div class="notification-content">
     <p><small><%= reservation.date %></small></p>
-    <p><%= reservation.review.content %> Rating : <%= reservation.review.rating %></p>
+    <p><%= reservation.review.content %> Rating : <% reservation.review.rating.times do  %>
+ <span class="glyphicon glyphicon-star"></span>
+<% end %></p>
   </div>
     <%end%>
 
-
 </div>
 
+
+
 <%end %>
+
+
 
 
 
