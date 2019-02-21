@@ -2,7 +2,7 @@
 
 <% @escorts.each do |escort| %>
   <div class="col-xs-12 col-sm-6 col-md-4">
-    <div class="card-escort">
+    <div class="card-escort animated">
       <%= link_to escort_path(escort) do %>
         <img src=<%= escort.photos %>>
       <% end %>

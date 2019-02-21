@@ -4,7 +4,7 @@
 
 <%= simple_form_for [@escort ,@reservation] do |f| %>
   <div class="form-inputs">
-    <%= f.input :date,
+    <%= f.input :date, as: :string,
                 required: true,
                 autofocus: true,
                 input_html: {} %>
@@ -18,4 +18,8 @@
     <%= f.button :submit, "Reserve!" %>
   </div>
 <% end %>
+
+
+
+---------------
 
