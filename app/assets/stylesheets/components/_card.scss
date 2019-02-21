@@ -51,18 +51,15 @@ transition: all 0.2s ease-out;
 }
 
 
-// .ex1 a:hover,
-// .ex1 a:focus {
-//   transform: scale(1.2);
-//   box-shadow: 0 0 65px #CDBE9F inset, 0 0 20px #BEAE8C inset, 0 0 15px #b6a684;
-// }
+//badge
+.busy{
+  margin-bottom: 5px;
+  font-size: 10px;
+  background-color: red;
+}
 
-
-
-
-// .card-escort-infos .card-escort-user {
-//   position: absolute;
-//   right: 16px;
-//   top: -20px;
-//   width: 40px;
-// }
+.available{
+  margin-bottom: 5px;
+  font-size: 10px;
+  background-color: green;
+}
