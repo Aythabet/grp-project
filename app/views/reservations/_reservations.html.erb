@@ -1,9 +1,39 @@
-<ul>
-  <% @reservations.each do |reservation| %>
-    <%= link_to reservation.id, reservation_path(reservation)%> ---
-    <% if reservation.review.blank?  %>
-    <%= link_to "Add review", new_reservation_review_path(reservation)%>
-    <%end %>
-    <br>
-  <%end %>
-</ul>
+
+<% @reservations.each do |reservation| %>
+
+<div class="notification">
+  <img src=<%= reservation.escort.photos %> class="avatar-large"/>
+
+
+    <% if reservation.review.blank? %>
+    <div class="notification-content">
+    <p><small><%= reservation.date %></small></p>
+
+    <p> <i>Write a review for this reservation</i></p>
+    </div>
+
+
+
+    <a class="btn btn-primary pull-right" href=<%= new_reservation_review_path(reservation) %> role="button">Write Review</a>
+
+
+    <% else %>
+    <div class="notification-content">
+    <p><small><%= reservation.date %></small></p>
+    <p><%= reservation.review.content %> Rating : <% reservation.review.rating.times do  %>
+ <span class="glyphicon glyphicon-star"></span>
+<% end %></p>
+  </div>
+    <%end%>
+
+</div>
+
+
+
+<%end %>
+
+
+
+
+
+
