@@ -8,7 +8,7 @@
 <div style="display: inline"><img src=<%= @escort.photos %> width="200px"></div>
 </div>
 <ul>
-  <h2><strong> Pseudo: </strong><%= @escort.pseudo %></h2>
+  <h2><strong> Pseudo: </strong><%= @escort.pseudo.capitalize %></h2>
   <li><strong> City: </strong><%= @escort.city %></li>
   <li>
     <strong> Services: </strong><ul><% @escort.service.tr('[]', '').tr('"', '').split(',').each do |element| %>
@@ -23,3 +23,16 @@
 
 
 <%= link_to "Make a reservation", new_escort_reservation_path(@escort) %>
+
+<p><strong>Previous reviews for <%= @escort.pseudo.capitalize %></strong></p>
+  <% if @escort.reviews.blank? %>
+    <li> No existing reviews, be the first one and book an appointment! </li>
+  <% else %>
+  <ol>
+  <% @escort.reviews.each do |review| %>
+    <li>Rating: <%= review.rating %> & Comments: <%= review.content %></li>
+    <br>
+    <% end %>
+  <% end%>
+  </ol>
+
