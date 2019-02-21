@@ -8,6 +8,11 @@
       <% end %>
       <div class="card-escort-infos">
         <div>
+        <% if escort.status == "Available" %>
+          <span class="badge badge-secondary available">Available</span>
+        <% else %>
+          <span class="badge badge-secondary busy">Busy</span>
+        <% end %>
           <h2><%= escort.pseudo.capitalize %></h2>
           <p><%= escort.city %> | <%= escort.gender %></p>
         </div>
