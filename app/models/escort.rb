@@ -1,3 +1,4 @@
 class Escort < ApplicationRecord
-  has_many :reviews, through: :reservation
+  has_many :reservations
+  has_many :reviews, through: :reservations
 end

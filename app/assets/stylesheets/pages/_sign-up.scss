@@ -1,0 +1,32 @@
+#user_email {
+    border-radius: 30px;
+}
+#user_password {
+    border-radius: 30px;
+    width: 100%;
+}
+#user_password_confirmation {
+    border-radius: 30px;
+    width: 100%;
+}
+#user_age {
+    border-radius: 30px;
+
+}
+#user_pseudo {
+    border-radius: 30px;
+}
+.passwords {
+    display: flex;
+    justify-content: space-around;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn{
+    border-radius: 10px;
+    width: 30%;
+}
