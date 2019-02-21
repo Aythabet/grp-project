@@ -1,10 +1,10 @@
-.edit-avatar {
-  width: 150px;
-  height: 150px;
-  // box-shadow: 10px 10px 85px -10px rgba(0,0,0,0.47);
-  box-shadow: 1px 1px 5px 0px #ccc;
-  border-radius: 50%;
-}
+// .edit-avatar {
+//   width: 150px;
+//   height: 150px;
+//   // box-shadow: 10px 10px 85px -10px rgba(0,0,0,0.47);
+//   box-shadow: 1px 1px 5px 0px #ccc;
+//   border-radius: 50%;
+// }
 
 .pseudo {
   color: $theme-blue;
@@ -18,7 +18,7 @@
 .fileContainer {
     margin-top: 30px;
     margin-left: 45px;
-    overflow: hidden;
+    // overflow: hidden;
     position: relative;
 }
 
@@ -36,13 +36,23 @@
     top: 0;
 }
 
-
 .fileContainer {
+    background-size: contain;
     background-color: white;
     border-radius: 50%;
     float: left;
+    width: 150px;
+    height: 150px;
+  i {
+    position: absolute;
+    top: 60px;
+    left: 60px;
+    color: white;
+    font-size: 30px;
+  }
 }
 
 .fileContainer [type=file] {
     cursor: pointer;
 }
+
