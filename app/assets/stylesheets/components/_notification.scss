@@ -8,6 +8,18 @@
   margin-top: 10px;
 }
 
+.background{
+  position: relative;
+}
+
+.reserv-card-link{
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0 ;
+}
+
 .notification .notification-content {
   flex-grow: 1;
   padding: 0 24px;
