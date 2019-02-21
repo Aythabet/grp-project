@@ -26,7 +26,8 @@ i = 0
     status: ["Available", "Not Available"].sample,
     gender: Faker::Gender.binary_type,
     contact: Faker::Internet.email,
-    photos: escorts_images[i]
+    photos: escorts_images[i],
+    age: Faker::Number.within(18..80)
   )
   escort.save!
 
