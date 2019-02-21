@@ -4,10 +4,17 @@
     <a href="/escorts" class="navbar-wagon-brand">
         <img src="http://lh3.ggpht.com/LhVxarUtRhNKMSGx2KMiPAGgzk9E3YqOjRUptgIfGoI7gHZl-M4Kszo_Ro02KJ_HnUU=w300" alt="logo">
     </a>
+
+    <div class="navbar-wagon-middle">
+      <% if current_page?(escorts_path) %>
+        <%= render "pages/search" %>
+      <% end %>
+    </div>
+
     <!-- Right Navigation -->
     <% if current_user %>
     <div class="navbar-wagon-right hidden-xs hidden-sm">
-        <a href="/escorts" class="navbar-wagon-item navbar-wagon-link">Browse escorts</a>
+        <a href="/escorts" class="navbar-wagon-item navbar-wagon-link">Home</a>
         <a href="/reservations" class="navbar-wagon-item navbar-wagon-link">Bookings</a>
         <a href="/profile" class="navbar-wagon-item navbar-wagon-link">Profile</a>
         <!-- Profile picture with dropdown list -->
@@ -15,7 +22,7 @@
             <div class="dropdown">
                 <img src="<%= current_user.picture %>" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
                 <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-                    <li><a href="/escorts">Browse escorts</a></li>
+                    <li><a href="/escorts">Home</a></li>
                     <li><a href="/reservations">Bookings</a></li>
                     <li><a href="/profile">Profile</a></li>
                     <li>
@@ -32,7 +39,7 @@
         <div class="dropdown">
             <i class="fas fa-bars dropdown-toggle" data-toggle="dropdown" role="button"></i>
             <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-                <li><a href="/escorts">Browse escorts</a></li>
+                <li><a href="/escorts">Home</a></li>
                 <li><a href="#">Bookings</a></li>
                 <li><a href="/profile">Profile</a></li>
                 <li>
