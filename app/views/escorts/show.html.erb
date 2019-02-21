@@ -7,7 +7,7 @@
     <img id="es-profile-pic" src=<%= @escort.photos %> width="100%">
     <div class="escort-profile-card-infos">
       <%= link_to "", new_escort_reservation_path(@escort), class:"btn btn-gradient pull-right far fa-calendar-check" %>
-      <p><h2><strong> Pseudo: </strong><%= @escort.pseudo.capitalize %></h2><p>
+      <p><h2><%= @escort.pseudo.capitalize %></h2><p>
       <p><strong> Status: </strong><%= @escort.status %><p>
       <p><strong> Gender: </strong><%= @escort.gender%><p>
       <p><strong> Age: </strong><%= @escort.age %> years old<p>
@@ -20,28 +20,21 @@
     </div>
   </div>
 
-  <div class="escort-pics">
+  <div class="escort-profile-bottom-card">
     <img class="es-pics" src=<%= @escort.photos %> width="45%">
     <img class="es-pics" src=<%= @escort.photos %> width="45%">
     <img class="es-pics" src=<%= @escort.photos %> width="45%">
     <img class="es-pics" src=<%= @escort.photos %> width="45%">
-  </div>
-
-
-  <div class="escort-reviews">
-    <p><strong>Previous reviews for <%= @escort.pseudo.capitalize %></strong></p>
-
-    <% if @escort.reviews.blank? %>
-      <li> No existing reviews, be the first one and book an appointment! </li>
-    <% else %>
-      <ol>
-      <% @escort.reviews.each do |review| %>
-        <li>Rating: <%= review.rating %> & Comments: <%= review.content %></li>
-        <br>
-      <% end %>
-    <% end%>
-
-      </ol>
+    <div class="escort-profile-card-bottom-infos">
+      <p><strong>Previous reviews for <%= @escort.pseudo.capitalize %></strong></p>
+      <% if @escort.reviews.blank? %>
+        <p>No existing reviews, be the first one and book an appointment!</p>
+      <% else %>
+        <% @escort.reviews.each do |review| %>
+          <p>Rating: <%= review.rating %> & Comments: <%= review.content %></p>
+        <% end %>
+      <% end%>
+    </div>
   </div>
 
 </div>

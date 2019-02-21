@@ -1,3 +1,4 @@
+// Top card css
 .escort-pics-profile{
     display: flex;
     align-items: center;
@@ -22,6 +23,7 @@
     margin-top: 5px;
     margin-left: 5px;
 }
+// Card div style
 
 .escort-profile-card {
     overflow: hidden;
@@ -55,6 +57,15 @@
     padding: 20px;
     width: 100vh;
 }
+
+.escort-profile-card-infos > h2 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #6A24BF;
+}
+
+// Buttons
+
 .btn-gradient {
     color: white;
     width: 45px;
@@ -67,4 +78,45 @@
 .btn-gradient:hover {
     background: linear-gradient(#0B468F, #7CA8DE);
     color: white;
+}
+
+
+// bottom card css
+.escort-profile-bottom-card {
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+}
+
+.escort-profile-bottom-card img {
+    height: 100%;
+    width: 50%;
+    object-fit: cover;
+}
+
+.escort-profile-bottom-card h2 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.escort-profile-bottom-card p {
+    font-size: 12px;
+    line-height: 0.9;
+    opacity: .7;
+    margin-bottom: 0;
+    margin-top: 8px;
+}
+
+.escort-profile-bottom-card .escort-profile-bottom-card-infos {
+    padding: 20px;
+    width: 100vh;
+}
+
+.escort-profile-bottom-card-infos > h2 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #6A24BF;
 }
