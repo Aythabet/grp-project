@@ -7,7 +7,7 @@
     <%= f.input :date, as: :string,
                 required: true,
                 autofocus: true,
-                input_html: {} %>
+                input_html: { value: Date.today} %>
     <%= f.input :message,
                 as: :text,
                 required: false,
