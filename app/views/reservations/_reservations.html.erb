@@ -1,35 +1,30 @@
-
 <% @reservations.each do |reservation| %>
-
-<div class="notification">
-  <img src=<%= reservation.escort.photos %> class="avatar-large"/>
-
-
+  <div class="notification">
+    <img src=<%= reservation.escort.photos %> class="avatar-large"/>
     <% if reservation.review.blank? %>
-    <div class="notification-content">
-    <p><small><%= reservation.date %></small></p>
-
-    <p> <i>Write a review for this reservation</i></p>
-    </div>
-
-
-
-    <a class="btn btn-primary pull-right-booking" href=<%= new_reservation_review_path(reservation) %> role="button">Write Review</a>
-
+      <div class="notification-content">
+        <p><small><%= reservation.date %></small></p>
+          <% if reservation.status == "Done" %>
+            <a class="btn btn-primary btn-sm pull-right btn-res" href=<%= new_reservation_review_path(reservation) %> role="button">Write Review</a>
+            <div><span class="badge badge-secondary done">Done</span></div>
+          <% elsif reservation.status == "Confirmed" %>
+            <div><span class="badge badge-secondary confirmed">Confirmed</span></div>
+          <% else %>
+            <div><span class="badge badge-secondary pending">Pending</span></div>
+          <% end %>
+            <p id="text-res"><i>Write a review for this reservation</i></p>
+      </div>
 
     <% else %>
-    <div class="notification-content">
-    <p><small><%= reservation.date %></small></p>
-    <p><%= reservation.review.content %> Rating : <% reservation.review.rating.times do  %>
- <span class="glyphicon glyphicon-star"></span>
-<% end %></p>
-  </div>
+      <div class="notification-content">
+        <p><small><%= reservation.date %></small></p>
+        <p><strong>Rating: </strong> <% reservation.review.rating.times do  %>
+        <span class="glyphicon glyphicon-star"></span>
+        <% end %></p>
+        <p><strong>Message:</strong>  <%= reservation.review.content %>
+      </div>
     <%end%>
-
-</div>
-
-
-
+  </div>
 <%end %>
 
 
