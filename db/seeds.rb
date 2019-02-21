@@ -1,16 +1,19 @@
-require 'faker'
+require "faker"
 puts "Generating Escorts"
+Review.destroy_all
 Reservation.destroy_all
 Escort.destroy_all
 
 
 user = User.create
 escorts_images = [
-  'https://res.cloudinary.com/daeahsosj/image/upload/v1550672218/samples/escorts/escort1.jpg',
-  'https://res.cloudinary.com/daeahsosj/image/upload/v1550672231/samples/escorts/escort2.png',
-  'https://res.cloudinary.com/daeahsosj/image/upload/v1550672219/samples/escorts/escort3.jpg',
-  'https://res.cloudinary.com/daeahsosj/image/upload/v1550672219/samples/escorts/escort4.jpg',
-  'https://res.cloudinary.com/daeahsosj/image/upload/v1550672237/samples/escorts/escort5.jpg'
+    "https://res.cloudinary.com/daeahsosj/image/upload/c_limit,g_center,h_230,w_430/v1550672218/samples/escorts/escort1.jpg",
+    "https://res.cloudinary.com/daeahsosj/image/upload/c_limit,g_center,h_230,w_430/v1550672231/samples/escorts/escort2.png",
+    "https://res.cloudinary.com/daeahsosj/image/upload/c_limit,g_center,h_230,w_430/v1550672219/samples/escorts/escort3.jpg",
+    "https://res.cloudinary.com/daeahsosj/image/upload/c_limit,g_center,h_230,w_430/v1550672219/samples/escorts/escort4.jpg",
+    "https://res.cloudinary.com/daeahsosj/image/upload/c_limit,g_center,h_230,w_430/v1550672237/samples/escorts/escort5.jpg",
+
+
 ]
 i = 0
 
@@ -19,7 +22,7 @@ i = 0
     pseudo: Faker::Internet.username,
     city: Faker::Address.city,
     price: Faker::Number.within(50..200),
-    service: [Faker::Superhero.power, Faker::Games::Pokemon.name , Faker::ElectricalComponents.passive],
+    service: [Faker::Superhero.power, Faker::Games::Pokemon.name, Faker::ElectricalComponents.passive],
     status: ["Available", "Not Available"].sample,
     gender: Faker::Gender.binary_type,
     contact: Faker::Internet.email,

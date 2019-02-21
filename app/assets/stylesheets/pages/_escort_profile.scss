@@ -1,3 +1,12 @@
+// General Page Layout
+.escort-profile-content{
+    width: 500vh;
+    display: flex;
+    justify-content: stretch;
+}
+
+
+
 // Top card css
 .escort-pics-profile{
     display: flex;
@@ -87,13 +96,7 @@
     background: white;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
     display: flex;
-    align-items: center;
-}
-
-.escort-profile-bottom-card img {
-    height: 100%;
-    width: 50%;
-    object-fit: cover;
+    align-items: flex-start;
 }
 
 .escort-profile-bottom-card h2 {
@@ -116,6 +119,17 @@
 }
 
 .escort-profile-bottom-card-infos > h2 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #6A24BF;
+}
+
+.escort-pics-bot{
+    text-align: center;
+    width: 70vh;
+}
+
+.escort-profile-card-bottom-infos > h2 {
     font-size: 20px;
     font-weight: bold;
     color: #6A24BF;
