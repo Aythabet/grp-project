@@ -7,7 +7,7 @@
     <%= f.input :date, as: :string,
                 required: true,
                 autofocus: false,
-                input_html: {} %>
+                input_html: { value: Date.today} %>
     <%= f.input :message,
                 as: :text,
                 required: false,
@@ -18,8 +18,3 @@
     <%= f.button :submit, "Reserve!" %>
   </div>
 <% end %>
-
-
-
----------------
-
