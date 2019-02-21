@@ -3,55 +3,30 @@
 <div class="escort-grid">
 
 
-  <%# <div class="escort-pics-profile">
-    <img id="es-profile-pic" src=<%= @escort.photos width="100%">
-  </div> %>
-
-
   <div class="escort-profile-card">
-    <img src=<%= @escort.photos %> width="100%">
+    <img id="es-profile-pic" src=<%= @escort.photos %> width="100%">
     <div class="escort-profile-card-infos">
-      <p><strong> City: </strong><%= @escort.city %>
-      <strong> Services: </strong><ul><% @escort.service.tr('[]', '').tr('"', '').split(',').each do |element| %>
-          <%= element %><p>
-          <% end %></ul>
+      <%= link_to "", new_escort_reservation_path(@escort), class:"btn btn-gradient pull-right far fa-calendar-check" %>
+      <p><h2><strong> Pseudo: </strong><%= @escort.pseudo.capitalize %></h2><p>
       <p><strong> Status: </strong><%= @escort.status %><p>
       <p><strong> Gender: </strong><%= @escort.gender%><p>
-      <p><strong> Contact: </strong><%= @escort.contact %><p>
-
-      <p><h2><strong> Pseudo: </strong><%= @escort.pseudo.capitalize %></h2><p>
       <p><strong> Age: </strong><%= @escort.age %> years old<p>
       <p><strong> Price: </strong><%= @escort.price %> €<p>
+      <p><strong> City: </strong><%= @escort.city %>
+      <p><strong> Services: </strong><ul><% @escort.service.tr('[]', '').tr('"', '').split(',').each do |element| %><p>
+          <p><%= element %></p>
+          <% end %></ul>
+      <p><strong> Contact: </strong><%= @escort.contact %><p>
     </div>
   </div>
-
-
-
-
 
   <div class="escort-pics">
-    <img class="es-pics" src=<%= @escort.photos %> width="47%">
-    <img class="es-pics" src=<%= @escort.photos %> width="47%">
-    <img class="es-pics" src=<%= @escort.photos %> width="47%">
-    <img class="es-pics" src=<%= @escort.photos %> width="47%">
+    <img class="es-pics" src=<%= @escort.photos %> width="45%">
+    <img class="es-pics" src=<%= @escort.photos %> width="45%">
+    <img class="es-pics" src=<%= @escort.photos %> width="45%">
+    <img class="es-pics" src=<%= @escort.photos %> width="45%">
   </div>
 
-  <%# <div class="escort-details">
-    <div class="escort-details-header">
-      <%= link_to "Make a reservation", new_escort_reservation_path(@escort) %>
-
-    </div>
-
-    <div class="escort-details-content">
-      <strong> City: </strong><%= @escort.city %>
-      <strong> Services: </strong><ul><% @escort.service.tr('[]', '').tr('"', '').split(',').each do |element| %>
-          <%= element %>
-          <% end %></ul>
-      <strong> Status: </strong><%= @escort.status %>
-      <strong> Gender: </strong><%= @escort.gender%>
-      <strong> Contact: </strong><%= @escort.contact %>
-    </div>
-  </div> %>
 
   <div class="escort-reviews">
     <p><strong>Previous reviews for <%= @escort.pseudo.capitalize %></strong></p>

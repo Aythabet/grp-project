@@ -29,28 +29,42 @@
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
     display: flex;
     align-items: center;
-  }
-  
-  .escort-profile-card img {
+}
+
+.escort-profile-card img {
     height: 100%;
     width: 50%;
     object-fit: cover;
-  }
-  
-  .escort-profile-card h2 {
+}
+
+.escort-profile-card h2 {
     font-size: 16px;
     font-weight: bold;
     margin: 0;
-  }
-  
-  .escort-profile-card p {
+}
+
+.escort-profile-card p {
     font-size: 12px;
     line-height: 0.9;
     opacity: .7;
     margin-bottom: 0;
     margin-top: 8px;
-  }
-  
-  .escort-profile-card .escort-profile-card-infos {
-    padding: 16px;
-  }
+}
+
+.escort-profile-card .escort-profile-card-infos {
+    padding: 20px;
+    width: 100vh;
+}
+.btn-gradient {
+    color: white;
+    width: 45px;
+    border-radius: 4px;
+    font-weight: bold;
+    background: linear-gradient(#167FFB, #7CA8DE);
+    transition: background 0.3s ease;
+    border: 1px solid #7CA8DE;
+}
+.btn-gradient:hover {
+    background: linear-gradient(#0B468F, #7CA8DE);
+    color: white;
+}
