@@ -1,5 +1,6 @@
 require 'faker'
 puts "Generating Escorts"
+Review.destroy_all
 Reservation.destroy_all
 Escort.destroy_all
 
