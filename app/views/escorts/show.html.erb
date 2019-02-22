@@ -32,8 +32,11 @@
         <% else %>
         <ul>
           <% @escort.reviews.each do |review| %>
-            <li><p><strong>Rating:</strong><% review.rating.times do %>
+            <li><p><strong>Rating:</strong><% review.rating.to_i.times do  %>
             <span class="glyphicon glyphicon-star"></span>
+            <% end %>
+            <% review.blank_stars.times do %>
+            <span class="glyphicon glyphicon-star-empty"></span>
             <% end %>
             <li><p><strong>Comment:</strong><%= review.content %></p></li>
           <% end %>
