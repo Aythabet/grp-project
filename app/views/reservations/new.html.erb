@@ -1,6 +1,11 @@
 <div class="delete-left-margin"></div>
 <div class="delete-right-margin">
-
+  <div
+    id="map"
+    class="escort-map"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+  ></div>
 </div>
 
 <div class="col-xs-6 show-escort">
@@ -12,14 +17,7 @@
 </div>
 <div class="col-xs-5 show-calendar">
   <div class="row">
+
   <%= render 'form' %>
   </div>
 </div>
-
-
-<div class='map-offset'><%= @markers %></div>
-<div
-  id="map"
-  data-markers="<%= @markers.to_json %>"
-  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-></div>

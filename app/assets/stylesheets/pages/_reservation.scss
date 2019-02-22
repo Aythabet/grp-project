@@ -23,8 +23,8 @@
   width: 50vw;
   top: 0;
   left: 50vw;
-  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://cdn-images-1.medium.com/max/1600/0*yPSQlTHRvLaIVBcG.jpg');
-  background-size: cover;
+  // background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://cdn-images-1.medium.com/max/1600/0*yPSQlTHRvLaIVBcG.jpg');
+  // background-size: cover;
 }
 
 .show-escort {
@@ -32,6 +32,12 @@
   background-color: white;
   // height: 100%;
   padding-top: 30px;
+}
+
+.escort-map {
+  height: 100%;
+  width: 100%;
+  position: absolute;
 }
 
 .show-calendar {
