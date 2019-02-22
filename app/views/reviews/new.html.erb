@@ -2,25 +2,34 @@
 <div class="page">
   <div class="row justify-content-center top">
       <h1>Create a review for <%= @reservation.escort.pseudo.capitalize %></h1>
-      <img class="avatar-large" src="<%=@reservation.escort.photos%>">
   </div>
-    <div class="d-flex">
-      <p class="ba"> Reservation ID: <%= @reservation.id %></p>
-      <p> Reservation date: <br><%= @reservation.date %></p>
-      <p> Reservation status: <%= @reservation.status %></p>
-    </div>
-      <div class="form-group content-review">
+
+
+
+
+
+
+<div class="card-review" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%=@reservation.escort.photos%>);">
+  <div class="card-description-review">
+    <h2>Reservation date: <br><strong><%= @reservation.date %></strong></h2>
+  </div>
+  <div class="card-status">
+    <p> Reservation status: <br><strong><%= @reservation.status %></strong></p>
+  </div>
+</div>
+
+  <div class="form-group content-review">
         <%= simple_form_for ([@reservation, @review]) do |f| %>
           <%= f.input :content, placeholder: "Write your comments.."%>
-      </div>
-      <div class="form-group">
+  </div>
+  <div class="form-group">
           <%= f.input :rating, :collection => 1..5, include_blank: false  %>
-      </div>
-      <div class="form-group btn-review" >
+  </div>
+    <div class="form-group btn-review" >
           <%= f.submit "add a review", class: "btn btn-primary"%>
         <% end %>
-      </div>
     </div>
+  </div>
 </div>
 
 
