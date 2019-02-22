@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   end
 
   devise_for :users
-  root to: 'escorts#index'
+  root to: 'escorts#home'
   resources :escorts, only: [:show, :index] do
     resources :reservations, only: [:new, :create]
   end
