@@ -30,26 +30,11 @@ activators.forEach((activator) => {
   const hidden = activator.querySelector('.booking-infos');
   if (hidden) {
     activator.addEventListener('click', () => {
-      if (hidden.style.display = "none") {
-        activator.style.paddingBottom = "100px";
+      if (hidden.style.display === "none") {
+        activator.style.padding= "8px 16px 100px 16px";
         hidden.style.display = "block";
       } else {
-        activator.style.paddingBottom = "0px";
-        hidden.style.display = "none";
-      }
-    });
-  }
-});
-
-activators.forEach((activator) => {
-  const hidden = activator.querySelector('.booking-infos');
-  if (hidden) {
-    activator.addEventListener('click', () => {
-      if (hidden.style.display = "block") {
-        activator.style.paddingBottom = "100px";
-        hidden.style.display = "block";
-      } else {
-        activator.style.paddingBottom = "0px";
+        activator.style.padding= "8px 16px 8px 16px";
         hidden.style.display = "none";
       }
     });
