@@ -16,12 +16,50 @@
 }
 
 
-.d-flex {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 30px;
-}
-
 .btn-review {
   margin-top: 50px;
+}
+
+#form-content {
+display: flex;
+}
+
+.card-review {
+  height: 175px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  background-position: center;
+  color: white;
+  position: relative;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.card-category-review {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+.card-description-review {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+.card-description-review h2 {
+  font-size: 24px;
+}
+.card-description-review p {
+  font-size: 14px;
+  opacity: 0.7;
+  font-weight: lighter;
+}
+.card-status {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 15px;
+  text-transform: uppercase;
 }
