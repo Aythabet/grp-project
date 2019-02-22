@@ -17,8 +17,11 @@ class EscortsController < ApplicationController
   end
 
   def home
-
-    render :layout => false
+    if current_user.present?
+      redirect_to escorts_path
+    else
+      render layout: false
+    end
   end
 end
 
