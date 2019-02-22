@@ -15,6 +15,7 @@ class EscortsController < ApplicationController
 
   def show
     @escort = Escort.find(params[:id])
+    catch_marker
   end
 
   def home
@@ -36,4 +37,13 @@ class EscortsController < ApplicationController
       }
     end
   end
+
+  def catch_marker
+    @markers = []
+    @markers << {
+        lng: @escort.longitude,
+        lat: @escort.latitude
+      }
+  end
+
 end
