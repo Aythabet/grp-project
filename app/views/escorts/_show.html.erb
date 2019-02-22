@@ -1,16 +1,22 @@
+<img id="es-profile-pic" src=<%= @escort.photos %> width="80%">
 
-<ul>
-  <h3><strong> Pseudo: </strong><%= @escort.pseudo %></h3>
-  <li><strong> City: </strong><%= @escort.city %></li>
-  <li>
-    <strong> Services: </strong><ul><% @escort.service.tr('[]', '').tr('"', '').split(',').each do |element| %>
-      <li><%= element %></li>
-      <% end %></ul>
-  <li><strong> Status: </strong><%= @escort.status %></li>
-  <li><strong> Gender: </strong><%= @escort.gender%></li>
-  <li><strong> Contact: </strong><%= @escort.contact %></li>
-  <li><strong> Age: </strong><%= @escort.age %> years old</li>
-  <li><strong> Price: </strong><%= @escort.price %> €</li>
-</ul>
-
-<%= link_to "Back to the details", escort_path(@escort) %>
+<div class="row">
+  <div class="col-xs-6">
+    <div class="escort-profile-card-infos">
+      <h2><%= @escort.pseudo.capitalize %></h2>
+      <p><strong> Status: </strong><%= @escort.status %><p>
+      <p><strong> Gender: </strong><%= @escort.gender%><p>
+      <p><strong> Age: </strong><%= @escort.age %> years old<p>
+      <p><strong> Price: </strong><%= @escort.price %> €<p>
+      <p><strong> City: </strong><%= @escort.city %>
+      <p><strong> Contact: </strong><%= @escort.contact %><p>
+    </div>
+  </div>
+  <div class="col-xs-6 right-info">
+    <div class="escort-profile-card-infos">
+      <p><strong> Services: </strong><ul><% @escort.service.tr('[]', '').tr('"', '').split(',').each do |element| %><p>
+          <p><%= element %></p>
+          <% end %></ul>
+    </div>
+  </div>
+</div>

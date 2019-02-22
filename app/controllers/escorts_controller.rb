@@ -1,4 +1,5 @@
 class EscortsController < ApplicationController
+
   def index
     if params[:query].present?
       sql_query = " \
@@ -14,4 +15,13 @@ class EscortsController < ApplicationController
   def show
     @escort = Escort.find(params[:id])
   end
+
+  def home
+    if current_user.present?
+      redirect_to escorts_path
+    else
+      render layout: false
+    end
+  end
 end
+
