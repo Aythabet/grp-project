@@ -1,0 +1,17 @@
+<%= simple_form_for [@escort ,@reservation] do |f| %>
+  <div class="form-inputs">
+    <%= f.input :date, as: :string,
+                required: true,
+                autofocus: false,
+                input_html: { value: Date.today} %>
+    <%= f.input :message,
+                as: :text,
+                required: false,
+                input_html: { autocomplete: "current-password" },
+                placeholder: 'Please add a small message...' %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Reserve!", class: 'btn btn-resa btn-primary' %>
+  </div>
+<% end %>
