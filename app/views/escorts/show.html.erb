@@ -26,13 +26,19 @@
         <img class="es-pics" src=<%= @escort.photos %> width="42%">
       </div>
       <div class="escort-profile-card-bottom-infos">
-        <h2>Previous reviews for: <%= @escort.pseudo.capitalize %></h2>
+        <h2>Previous reviews for <%= @escort.pseudo.capitalize %></h2>
         <% if @escort.reviews.blank? %>
           <p>No existing reviews, be the first one and book an appointment!</p>
         <% else %>
         <ul>
           <% @escort.reviews.each do |review| %>
-            <li><p><strong>Rating:</strong> <% review.rating.times do  %><span class=“glyphicon glyphicon-star”></span><% end %> - <strong> Comment: </strong><%= review.content %></p></li>
+            <li><p><strong>Rating:</strong><% review.rating.to_i.times do  %>
+            <span class="glyphicon glyphicon-star"></span>
+            <% end %>
+            <% review.blank_stars.times do %>
+            <span class="glyphicon glyphicon-star-empty"></span>
+            <% end %>
+            <li><p><strong>Comment:</strong><%= review.content %></p></li>
           <% end %>
         </ul>
         <% end%>
@@ -40,3 +46,6 @@
     </div>
   </div>
 </div>
+
+
+
