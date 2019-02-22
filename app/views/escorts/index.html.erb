@@ -1,32 +1,34 @@
 
+<div class="row">
 <h1> List of Escorts</h1>
-
-<% @escorts.each do |escort| %>
-  <div class="col-xs-12 col-sm-6 col-md-4">
-    <div class="card-escort animated">
-      <%= link_to escort_path(escort) do %>
-        <img src=<%= escort.photos %>>
-      <% end %>
-      <div class="card-escort-infos">
-        <div>
-        <% if escort.status == "Available" %>
-          <span class="badge badge-secondary available">Available</span>
-        <% else %>
-          <span class="badge badge-secondary busy">Busy</span>
+  <% @escorts.each do |escort| %>
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="card-escort animated">
+        <%= link_to escort_path(escort) do %>
+          <img src=<%= escort.photos %>>
         <% end %>
-          <h2><%= escort.pseudo.capitalize %></h2>
-          <p><%= escort.city %> | <%= escort.gender %></p>
+        <div class="card-escort-infos">
+          <div>
+          <% if escort.status == "Available" %>
+            <span class="badge badge-secondary available">Available</span>
+          <% else %>
+            <span class="badge badge-secondary busy">Busy</span>
+          <% end %>
+            <h2><%= escort.pseudo.capitalize %></h2>
+            <p><%= escort.city %> | <%= escort.gender %></p>
+          </div>
+          <h2 class="card-escort-pricing"><%= escort.price %> €</h2>
         </div>
-        <h2 class="card-escort-pricing"><%= escort.price %> €</h2>
       </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
+</div>
 
+
+<div class='map-offset'></div>
 <div
   id="map"
-  style="width: 100%;
-  height: 600px;"
   data-markers="<%= @markers.to_json %>"
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
 ></div>
+

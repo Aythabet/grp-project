@@ -1,6 +1,22 @@
 // Specific CSS for your home-page
 .main-container{
   min-height: calc(100vh - 70px - 70px);
+  // position: relative;
 }
 
+.map-offset {
+  height: 300px;
+  width: 100%;
+}
 
+#map {
+  position: absolute;
+  height: 300px;
+  width: 100vw;
+  bottom: 70px;
+  left: 0;
+}
+
+body {
+  position: relative;
+}
