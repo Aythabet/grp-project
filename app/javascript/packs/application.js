@@ -1,10 +1,9 @@
 import "bootstrap";
 
-
+// Calendar JS
 import flatpickr from "flatpickr";
 import 'flatpickr/dist/flatpickr.css'
 
-console.log(flatpickr);
 
 
 const reservationDateElem = document.querySelector('#reservation_date')
@@ -13,6 +12,7 @@ console.log(reservationDateElem)
 
 flatpickr(reservationDateElem);
 
+// Profile JS
 const picture = document.querySelector('#user_picture');
 const form = document.querySelector('.edit_pic_form');
 
@@ -24,14 +24,18 @@ if (picture) {
 
 //= padding add for the bookings badges infos
 
-const hidden = document.querySelector('.booking-infos');
+const activators = document.querySelectorAll('.notification');
 
-if (hidden) {
-  hidden.addEventListener('click', () => {
-    if (hidden.style.display = "none") {
-      hidden.style.display = "block";
-    } else {
-      hidden.style.display = "none";
-    }
-  });
-}
+activators.forEach((activator) => {
+  const hidden = activator.querySelector('.booking-infos');
+  if (hidden) {
+    activator.addEventListener('click', () => {
+      if (hidden.style.display = "none") {
+        activator.style.paddingBottom = "100px";
+        hidden.style.display = "block";
+      } else {
+        hidden.style.display = "none";
+      }
+    });
+  }
+});
