@@ -91,8 +91,10 @@
         <br>
         <img src="https://res.cloudinary.com/daeahsosj/image/upload/v1550833696/logoname.png" alt="">
         <p>Find the right one... For tonight.</p>
-        <a href="/users/sign_in" class="btn-yours animated">Log in</a>
-        <a href="/users/sign_up" class="btn-yours animated">Sign up</a>
+        <% # if current_user.blank? %>
+          <a href="/users/sign_in" class="btn-yours animated">Log in</a>
+          <a href="/users/sign_up" class="btn-yours animated">Sign up</a>
+        <% # end %>
       </div>
     </div>
   </body>
