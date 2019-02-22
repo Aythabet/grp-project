@@ -22,13 +22,13 @@ i = 0
   escort = Escort.new(
     pseudo: Faker::Internet.username,
     city: Faker::Address.city,
-    price: Faker::Number.within(50..200),
+    price: Faker::Number.within(200..800),
     service: [Faker::Superhero.power, Faker::Cannabis.health_benefit, Faker::Movies::HarryPotter.spell],
     status: ["Available", "Not Available"].sample,
     gender: Faker::Gender.type,
     contact: Faker::Internet.email,
     photos: escorts_images[i],
-    age: Faker::Number.within(50..80)
+    age: Faker::Number.within(21..50)
   )
   escort.save!
 
