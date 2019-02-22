@@ -1,6 +1,14 @@
 class EscortsController < ApplicationController
 
   def index
+    @flats = Flat.where.not(latitude: nil, longitude: nil)
+    @markers = @flats.map do |flat|
+      {
+        lng: flat.longitude,
+        lat: flat.latitude
+      }
+    end
+
     if params[:query].present?
       sql_query = " \
         pseudo ILIKE :query\
