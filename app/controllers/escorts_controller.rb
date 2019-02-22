@@ -17,7 +17,8 @@ class EscortsController < ApplicationController
   end
 
   def home
-    puts "in home of escorts"
+
+    render :layout => false
   end
 end
 
