@@ -30,9 +30,18 @@ class ReservationsController < ApplicationController
 
   def set_escort
     @escort = Escort.find(params[:escort_id])
+    catch_markers
   end
 
   def reservation_params
     params.require(:reservation).permit(:date, :message)
+  end
+
+  def catch_markers
+    @markers = []
+    @markers << {
+        lng: @escort.longitude,
+        lat: @escort.latitude
+      }
   end
 end

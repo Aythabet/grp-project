@@ -1,5 +1,12 @@
 <div class="delete-left-margin"></div>
-<div class="delete-right-margin"></div>
+<div class="delete-right-margin">
+  <div
+    id="map"
+    class="escort-map"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+  ></div>
+</div>
 
 <div class="col-xs-6 show-escort">
   <!-- <h2>Your reservation:</h2> -->
@@ -9,21 +16,8 @@
 
 </div>
 <div class="col-xs-5 show-calendar">
-<%= simple_form_for [@escort ,@reservation] do |f| %>
-  <div class="form-inputs">
-    <%= f.input :date, as: :string,
-                required: true,
-                autofocus: false,
-                input_html: { value: Date.today} %>
-    <%= f.input :message,
-                as: :text,
-                required: false,
-                input_html: { autocomplete: "current-password" },
-                placeholder: 'Please add a small message...' %>
-  </div>
+  <div class="row">
 
-  <div class="form-actions">
-    <%= f.button :submit, "Reserve!", class: 'btn btn-resa btn-primary' %>
+  <%= render 'form' %>
   </div>
-<% end %>
 </div>

@@ -1,6 +1,7 @@
 class EscortsController < ApplicationController
 
   def index
+    catch_markers
     if params[:query].present?
       sql_query = " \
         pseudo ILIKE :query\
@@ -23,5 +24,16 @@ class EscortsController < ApplicationController
       render layout: false
     end
   end
-end
 
+  private
+
+  def catch_markers
+    @escorts = Escort.where.not(latitude: nil, longitude: nil)
+    @markers = @escorts.map do |escort|
+      {
+        lng: escort.longitude,
+        lat: escort.latitude
+      }
+    end
+  end
+end

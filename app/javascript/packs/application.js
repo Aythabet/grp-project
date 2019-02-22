@@ -12,6 +12,13 @@ console.log(reservationDateElem)
 
 flatpickr(reservationDateElem);
 
+// CSS
+import 'mapbox-gl/dist/mapbox-gl.css';
+// internal imports
+import { initMapbox } from '../plugins/init_mapbox';
+
+initMapbox();
+
 // Profile JS
 const picture = document.querySelector('#user_picture');
 const form = document.querySelector('.edit_pic_form');
@@ -40,3 +47,4 @@ activators.forEach((activator) => {
     });
   }
 });
+
