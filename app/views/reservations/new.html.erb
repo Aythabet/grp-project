@@ -1,9 +1,14 @@
-<h2>Create reservation</h2>
+<div class="delete-left-margin"></div>
+<div class="delete-right-margin"></div>
 
-<div class="col-xs-6">
-<%= render "escorts/show", escort: @escort %>
+<div class="col-xs-6 show-escort">
+  <h2>Your reservation:</h2>
+  <%= render "escorts/show", escort: @escort %>
 </div>
-<div class="col-xs-6">
+<div class="col-xs-1">
+
+</div>
+<div class="col-xs-5 show-calendar">
 <%= simple_form_for [@escort ,@reservation] do |f| %>
   <div class="form-inputs">
     <%= f.input :date, as: :string,
@@ -18,7 +23,7 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Reserve!" %>
+    <%= f.button :submit, "Reserve!", class: 'btn btn-resa btn-primary' %>
   </div>
 <% end %>
 </div>

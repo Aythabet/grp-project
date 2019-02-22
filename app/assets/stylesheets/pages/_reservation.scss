@@ -1,3 +1,42 @@
 #reservation_message {
-  min-height: 300px;
+  min-height: 200px;
+}
+
+.delete-left-margin {
+  position: absolute;
+  z-index: -1;
+  height: 100%;
+  width: 250px;
+  background-color: white;
+  top: 0;
+  left: -20px;
+}
+
+.delete-right-margin {
+  position: absolute;
+  z-index: -1;
+  height: 100%;
+  width: 50vw;
+  top: 0;
+  left: 50vw;
+  background-image: url('https://cdn-images-1.medium.com/max/1600/0*yPSQlTHRvLaIVBcG.jpg');
+  // background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.show-escort {
+  z-index: -1;
+  background-color: white;
+  height: calc(100vh - 70px - 70px);
+}
+
+.show-calendar {
+  background-color: white;
+  margin-top: 90px;
+  padding: 30px;
+  border-radius: 5px;
+}
+
+.btn-resa {
+  width: 125px;
 }
