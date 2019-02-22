@@ -1,7 +1,7 @@
 class EscortsController < ApplicationController
 
   def index
-    @escorts = Flat.where.not(latitude: nil, longitude: nil)
+    @escorts = Escort.where.not(latitude: nil, longitude: nil)
     @markers = @escorts.map do |flat|
       {
         lng: flat.longitude,
