@@ -26,9 +26,7 @@
 
       .btn-yours {
       color: #fff !important;
-      text-transform: uppercase;
       background: rgba(165, 203, 217, 0.5);
-      padding: 20px;
       border-radius: 50px;
       display: inline-block;
       border: none;
@@ -36,6 +34,10 @@
       margin: 20px;
       position: relative;
       top: 0;
+      width: 80px;
+      height: 20px;
+      padding-top: 5px;
+      font-size: 15px;
       }
 
       .btn-yours:hover {
@@ -87,9 +89,9 @@
   <body>
     <div class="banner text-center flexbox" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 60%, rgba(3, 163, 255, 1) 120%), url('https://res.cloudinary.com/daeahsosj/image/upload/v1550826436/rose-1024710_1920.jpg');">
       <div class="banner-content">
-        <img src="https://res.cloudinary.com/daeahsosj/image/upload/v1550833700/logoface.png" alt="">
+        <img src="https://res.cloudinary.com/daeahsosj/image/upload/v1550833700/logoface.png" width="100px" alt="Kumka Logo">
         <br>
-        <img src="https://res.cloudinary.com/daeahsosj/image/upload/v1550833696/logoname.png" alt="">
+        <img src="https://res.cloudinary.com/daeahsosj/image/upload/v1550833696/logoname.png" width="100px" alt="Kumka">
         <p>Find the right one... For tonight!</p>
         <% # if current_user.blank? %>
           <a href="/users/sign_in" class="btn-yours animated">Log in</a>
