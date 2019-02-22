@@ -1,4 +1,3 @@
-<%= render "reservations/reservations", reservation: @reservation %>
-
-
-
+<li><strong>Escort Reserved:</strong>   <%= @reservation.escort.pseudo %></li>
+<li><strong>Last message:</strong>   <%= @reservation.message %></li>
+<li><strong>Date de Reservation:</strong>   <%= @reservation.date %></li>
