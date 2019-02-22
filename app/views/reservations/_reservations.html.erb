@@ -1,9 +1,14 @@
 <div class="booking-cards">
   <% @reservations.each do |reservation| %>
     <div class="notification">
-    <%= link_to reservation_path(reservation) do%>
+    <div class="booking-infos">
+      <p><strong>Booking Infos:</strong></p >
+      <p>Escort Booked: <%=reservation.escort.pseudo %></p>
+      <p>Escort Age: <%=reservation.escort.age %></p>
+      <p>Escort Contact: <%=reservation.escort.contact %></p>
+      <p>Booking Date: <%=reservation.date %></p>
+    </div>
       <img src=<%= reservation.escort.photos %> class="avatar-large"/>
-    <% end %>
       <% if reservation.review.blank? %>
         <div class="notification-content">
           <p><small><%= reservation.date %></small></p>
